@@ -21,7 +21,7 @@ def home(req):
 
         for w in re.findall(re.compile('[\w\d]+'), s.lower()):
             count_words += 1
-            if w not in ignored_words or len(w) > 2:
+            if w not in ignored_words and len(w) > 2:
                 if words.get(w) is None:
                     words[w] = 0
                 words[w] += 1
