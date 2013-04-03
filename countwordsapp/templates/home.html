@@ -1,0 +1,33 @@
+
+<form name=file action="" method=post enctype=multipart/form-data>
+    {% csrf_token %}
+    {% if not words or error %}
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <p>
+        <label for=file=upload> Please upload file or copy text in field below: </label>
+        <input name=file-upload type=file> </br>
+        <textarea name=text-field rows=50 cols=200></textarea>
+    </p>
+
+    <p>
+        <button type=submit>Submit</button>
+    </p>
+    {% else %}
+    <a href="/">Back to text submit form</a>
+    <h1>Word count:</h1>
+    <p>Total number of words: {{ count_words }}</p>
+    <h1>List of words and counts</h1>
+    <table>
+        <thead>
+            <tr><td>Word</td><td># of occurences</td></tr>
+        </thead>
+        <tbody>
+            {% for tuple in words%}
+                <tr><td>{{tuple.word}}</td><td>{{tuple.count}}</td></tr>
+            {% endfor %}
+        </tbody>
+
+    {% endif %}
+</form>
