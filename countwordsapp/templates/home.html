@@ -15,7 +15,7 @@
         <button type=submit>Submit</button>
     </p>
     {% else %}
-    <a href="{% url home %}">Back to text submit form</a>
+    <a href="{% url 'home' %}">Back to text submit form</a>
     <h1>Word count:</h1>
     <p>Total number of words: {{ count_words }}</p>
     <h1>List of words and counts</h1>
