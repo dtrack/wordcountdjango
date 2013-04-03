@@ -1,7 +1,11 @@
+import os
+
 # Django settings for countwordsapp project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -107,10 +111,10 @@ ROOT_URLCONF = 'countwordsapp.urls'
 WSGI_APPLICATION = 'countwordsapp.wsgi.application'
 
 TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, "templates"),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "countwordsapp/templates",
 )
 
 INSTALLED_APPS = (
