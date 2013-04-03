@@ -3,9 +3,9 @@ from operator import itemgetter
 from django.shortcuts import render
 
 
-ignored_words = set(
+ignored_words = set([
     'the', 'is', 'was', 'a', 'i', 'to', 'in', 'of', 'and', 'you', 'your', 'we'
-)
+])
 
 def home(req):
     context = {}
